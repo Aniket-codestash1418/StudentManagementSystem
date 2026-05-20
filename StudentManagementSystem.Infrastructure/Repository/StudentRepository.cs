@@ -19,7 +19,7 @@ namespace StudentManagementSystem.Infrastructure.Repository
             try
             {
                 var response = await _appDbContext.Students.AddAsync(student);
-                _appDbContext.SaveChanges();
+                await _appDbContext.SaveChangesAsync();
                 return student;
             }
             catch (Exception ex)
